@@ -38,7 +38,7 @@ install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/root/.ssh/authorize
 chmod 0700 /root/.ssh/
 install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/etc/ssh/sshd_config /etc/ssh/sshd_config
 install -D -g root -o root -m 0664 ${SCRIPTDIR}/files.ironic/etc/network /etc/sysconfig/network
-install -D -g root -o root -m 0755 ${SCRIPTDIR}/files.ironic/usr/lib/systemd/system/ironic-callback.service /usr/lib/systemd/system/ironic-callback.service
-install -D -g root -o root -m 0755 ${SCRIPTDIR}/files.ironic/etc/bareon/bareon.conf /etc/bareon/bareon.conf
+install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/usr/lib/systemd/system/ironic-callback.service /usr/lib/systemd/system/ironic-callback.service
+install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/etc/bareon/bareon.conf /etc/bareon/bareon.conf
 
 systemctl enable ironic-callback.service
