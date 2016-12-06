@@ -1,0 +1,10 @@
+Code-Review+1: Doug Szumski <dszumski@cray.com>
+Code-Review+1: Mark Goddard <mgoddard@cray.com>
+Code-Review+2: Evgeniy L <eli@mirantis.com>
+Workflow+1: Evgeniy L <eli@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 06 Dec 2016 18:36:16 +0000
+Reviewed-on: https://review.openstack.org/372381
+Project: openstack/bareon-image-elements
+Branch: refs/heads/master
