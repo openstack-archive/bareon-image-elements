@@ -11,7 +11,7 @@ RELEASE_FILE=/etc/bareon-release
 SCRIPTDIR=$(dirname $0)
 install-packages python-setuptools python-pip python-dev
 
-if [ -n ${BAREON_SRC-""} ] ; then
+if [ -d /tmp/bareon/.git ] ; then
     cd /tmp/bareon
     pip install --upgrade setuptools
     pip install -r requirements.txt && python setup.py install

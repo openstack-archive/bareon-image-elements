@@ -6,7 +6,7 @@ fi
 set -eu
 set -o pipefail
 
-if [ -n ${BAREON_SRC-""} ] ; then
+if [ -n "$BAREON_SRC" ] ; then
     git clone -b $BAREON_BRANCH $BAREON_SRC $TARGET_ROOT/tmp/bareon
 
     cd $TARGET_ROOT/tmp/bareon
