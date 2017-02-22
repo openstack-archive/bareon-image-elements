@@ -1,5 +1,4 @@
 curl:
-dhclient:
 policycoreutils:
 selinux-policy:
 selinux-policy-targeted:
@@ -19,4 +18,3 @@ btrfs-progs:
 dosfstools:
 rsync:
 grub2:
-
