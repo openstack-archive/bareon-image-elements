@@ -21,10 +21,6 @@ whl_name=$(ls -1rv dist/bareon*.whl 2>/dev/null | head -1)
 pip install $whl_name
 cd /
 
-if [ ! -f /usr/bin/ironic_callback ]; then
-    ln -s /usr/local/bin/ironic_callback /usr/bin/ironic_callback
-fi
-
 echo $'md-mod' >> /etc/modules
 
 install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/root/.ssh/authorized_keys /root/.ssh/authorized_keys

@@ -29,10 +29,6 @@ else
     rpm -qi bareon >> $RELEASE_FILE
 fi
 
-if [ ! -f /usr/bin/ironic_callback ]; then
-    ln -s /usr/local/bin/ironic_callback /usr/bin/ironic_callback
-fi
-
 # TODO(lobur): generate this key and publish together with image
 install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/root/.ssh/authorized_keys /root/.ssh/authorized_keys
 chmod 0700 /root/.ssh/
