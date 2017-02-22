@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "${DIB_DEBUG_TRACE:-0}" -gt 0 ]; then
+    set -x
+fi
+set -eu
+set -o pipefail
+
+echo "Remove all prepared network device configuration(centos-minimall have"
+echo "added couple of them). We can't predefine netowrk setup during image"
+echo "build."
+for iface in /etc/sysconfig/network-scripts/ifcfg-*; do
+    [ ! -e "$iface" ] && break
+    [ "$(basename "$iface")" = "ifcfg-lo" ] && continue
+    rm -v "$iface"
+done
