@@ -1,15 +1,11 @@
 curl:
 dhclient:
 policycoreutils:
-selinux-policy:
-selinux-policy-targeted:
-setroubleshoot:
 openssh-server:
 openssh-client:
 qemu-utils:
 parted:
 gdisk:
-hdparm:
 util-linux:
 gcc:
 lvm2:
