@@ -11,4 +11,3 @@ set -e
 sudo mkdir -p $TARGET_ROOT/etc/yum.repos.d
 sudo cp /etc/yum.repos.d/*.repo $TARGET_ROOT/etc/yum.repos.d/
 sudo cp /etc/pki/rpm-gpg/* $TARGET_ROOT/etc/pki/rpm-gpg/
-

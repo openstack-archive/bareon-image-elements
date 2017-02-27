@@ -29,12 +29,18 @@ else
     rpm -qi bareon >> $RELEASE_FILE
 fi
 
-# TODO(lobur): generate this key and publish together with image
-install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/root/.ssh/authorized_keys /root/.ssh/authorized_keys
-chmod 0700 /root/.ssh/
 install -D -g root -o root -m 0600 ${SCRIPTDIR}/files.ironic/etc/ssh/sshd_config /etc/ssh/sshd_config
 install -D -g root -o root -m 0664 ${SCRIPTDIR}/files.ironic/etc/network /etc/sysconfig/network
 install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/usr/lib/systemd/system/ironic-callback.service /usr/lib/systemd/system/ironic-callback.service
 install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/etc/bareon/bareon.conf /etc/bareon/bareon.conf
+
+install -d -g root -o root -m 0700 /root/.ssh
+if [ -n "$DIB_BAREON_ROOT_PASSWORD" ]; then
+    echo "root:$DIB_BAREON_ROOT_PASSWORD" | chpasswd
+fi
+if [ -f /tmp/bareon-build/inject-ssh-key.pub ]; then
+    (umask 0077; touch /root/.ssh/authorized_keys)
+    cat "/tmp/bareon-build/inject-ssh-key.pub" > /root/.ssh/authorized_keys
+fi
 
 systemctl enable ironic-callback.service

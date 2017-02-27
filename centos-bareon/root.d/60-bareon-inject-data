@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ ${DIB_DEBUG_TRACE:-1} -gt 0 ]; then
+    set -x
+fi
+
+# inject files into future chroot
+install -m 0700 -d "$TARGET_ROOT/tmp/bareon-build"
+if [ -n "$DIB_BAREON_INJECT_SSH_KEY" ]; then
+    cp "$DIB_BAREON_INJECT_SSH_KEY" "$TARGET_ROOT/tmp/bareon-build/inject-ssh-key.pub"
+fi
