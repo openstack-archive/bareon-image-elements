@@ -1,0 +1,8 @@
+Code-Review+2: Bogun Dmitriy <dbogun@mirantis.com>
+Workflow+1: Bogun Dmitriy <dbogun@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 01 Mar 2017 15:50:44 +0000
+Reviewed-on: https://review.openstack.org/438529
+Project: openstack/bareon-image-elements
+Branch: refs/heads/master
