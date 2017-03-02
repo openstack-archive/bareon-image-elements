@@ -35,7 +35,7 @@ install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/usr/lib/systemd/sys
 install -D -g root -o root -m 0644 ${SCRIPTDIR}/files.ironic/etc/bareon/bareon.conf /etc/bareon/bareon.conf
 
 install -d -g root -o root -m 0700 /root/.ssh
-if [ -n "$DIB_BAREON_ROOT_PASSWORD" ]; then
+if [ -n "${DIB_BAREON_ROOT_PASSWORD:-}" ]; then
     echo "root:$DIB_BAREON_ROOT_PASSWORD" | chpasswd
 fi
 if [ -f /tmp/bareon-build/inject-ssh-key.pub ]; then
